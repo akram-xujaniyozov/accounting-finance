@@ -1,9 +1,10 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 
-const App: React.FC = () => {
-  return <h1>Webpack was runned</h1>;
-};
+import App from "./App";
 
+// Taking control root element
 const root = createRoot(document.getElementById("root"));
+
+// Rendering root component
 root.render(<App />);
