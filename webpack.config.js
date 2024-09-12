@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -18,6 +19,22 @@ module.exports = {
         exclude: /node_modules/,
         use: "babel-loader",
       },
+      {
+        test: /\.(jpe?g|gif|png|svg)$/i,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: false,
+              name: "./public/assets/images/[name].[ext]",
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(scc|cc|sas)s$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
     ],
   },
   plugins: [
@@ -25,6 +42,19 @@ module.exports = {
       template: "./public/index.html",
     }),
   ],
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          compress: {
+            unused: true,
+            dead_code: true,
+          },
+        },
+      }),
+    ],
+  },
   devServer: {
     port: 3000,
     open: true,
