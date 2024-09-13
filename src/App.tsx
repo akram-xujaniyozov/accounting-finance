@@ -1,7 +1,10 @@
-import React, { FC } from "react";
+import React, { ReactNode, Fragment } from "react";
+import HomePage from "./pages/HomePage";
 
-const App: FC = () => {
-  return <h1>Started development</h1>;
-};
-
-export default App;
+export default function App(): ReactNode {
+  return (
+    <Fragment>
+      <HomePage />
+    </Fragment>
+  );
+}

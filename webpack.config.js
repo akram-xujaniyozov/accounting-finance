@@ -26,14 +26,14 @@ module.exports = {
             loader: "url-loader",
             options: {
               limit: false,
-              name: "./public/assets/images/[name].[ext]",
+              name: "./assets/images/[name].[ext]",
             },
           },
         ],
       },
       {
-        test: /\.(scc|cc|sas)s$/i,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        test: /\.(sass|css|scss)$/,
+        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
       },
     ],
   },
