@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import SupportTypes from "./SupportTypes";
+import SupportTypes from "./Support";
 
 const supportTypes: { id: string; label: string }[] = [
   {

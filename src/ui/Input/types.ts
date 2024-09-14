@@ -5,4 +5,5 @@ export interface InputProps {
   placeholder: string | undefined;
   styles?: CSSProperties;
   className?: string | undefined;
+  maxLength?: number | undefined;
 }

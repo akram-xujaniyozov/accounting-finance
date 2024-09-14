@@ -7,6 +7,7 @@ export default function InputElement({
   placeholder,
   styles,
   className,
+  maxLength,
 }: InputProps): ReactNode {
   return (
     <Input
@@ -14,6 +15,7 @@ export default function InputElement({
       placeholder={placeholder}
       style={styles}
       className={className}
+      maxLength={maxLength}
     />
   );
 }
