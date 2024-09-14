@@ -3,7 +3,7 @@ import { WechatOutlined } from "@ant-design/icons";
 
 // components
 import FinanceControl from "../../components/FinanceControl";
-import Support from "../../components/Support";
+import Support from "../../components/Supports";
 // UI kit
 import Button from "../../ui/Button";
 
@@ -16,7 +16,7 @@ export default function Sidebar(): ReactNode {
         type="primary"
         size="large"
         icon={<WechatOutlined />}
-        className="py-8 text-xl rounded-3xl"
+        className="py-7 text-lg rounded-3xl"
       >
         Связаться с нами
       </Button>
