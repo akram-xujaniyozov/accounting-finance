@@ -1,20 +1,52 @@
 import React, { ReactNode } from "react";
+import {
+  CloseOutlined,
+  FolderFilled,
+  FolderAddFilled,
+} from "@ant-design/icons";
 
+// UI kit
 import Button from "../../../ui/Button";
+// Types of component
+import { TableButtonsProps } from "./types";
 
-export default function TableButtons(): ReactNode {
+export default function TableButtons({
+  onClick,
+}: TableButtonsProps): ReactNode {
   return (
-    <div className="flex items-center justify-between basis-4/5 border-y-[1px]">
-      <div className="flex items-center">
-        <Button type="link" size="small" shape="default" className="">
+    <div className="flex items-center justify-between w-5/6 border-y border-zinc-300 py-2">
+      <div className="flex items-center gap-4">
+        <Button
+          type="link"
+          size="small"
+          shape="default"
+          className="text-base text-darkerblue font-extralight"
+          icon={<FolderFilled />}
+          iconPosition="start"
+          onClick={onClick}
+        >
           Загрузить данные из csv
         </Button>
-        <Button type="link" size="small" shape="default" className="">
+        <Button
+          type="link"
+          size="small"
+          shape="default"
+          className="text-base text-darkerblue font-extralight"
+          icon={<FolderAddFilled />}
+          iconPosition="start"
+        >
           Изменить данные
         </Button>
       </div>
-      <div>
-        <Button type="link" size="small" shape="default" className="">
+      <div className="pl-8 border-l border-zinc-300">
+        <Button
+          type="link"
+          size="small"
+          shape="default"
+          className="text-base text-darkerblue font-extralight"
+          icon={<CloseOutlined />}
+          iconPosition="end"
+        >
           Очистить
         </Button>
       </div>

@@ -4,7 +4,7 @@ import { SizeType } from "antd/es/config-provider/SizeContext";
 export interface ButtonProps {
   type: "link" | "text" | "default" | "primary" | "dashed" | undefined;
   size: SizeType;
-  children: string | undefined;
+  children: string | ReactNode;
   className: string;
   shape?: "default" | "circle" | "round" | undefined;
   icon?: ReactNode;

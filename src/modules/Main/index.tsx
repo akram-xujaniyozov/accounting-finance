@@ -1,12 +1,12 @@
 import React, { ReactNode } from "react";
 
-import RemainsForm from "../../components/Remains";
+import Remains from "../../components/Remains";
 import Table from "../../components/Table";
 
 export default function Main(): ReactNode {
   return (
-    <div>
-      <RemainsForm />
+    <div className="flex flex-col gap-y-8">
+      <Remains />
       <Table />
     </div>
   );

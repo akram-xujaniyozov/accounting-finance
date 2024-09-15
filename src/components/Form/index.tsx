@@ -1,11 +1,27 @@
 import React, { ReactNode } from "react";
 import { ExportOutlined } from "@ant-design/icons";
+import { CSVLink } from "react-csv";
+import { useGetAllProductsQuery } from "../../modules/Main/store/reducer";
 
-import Button from "../../ui/Button";
+// components
 import InputField from "./InputField";
 import SelectField from "./SelectField";
+// UI kit
+import Button from "../../ui/Button";
+
+const headersOfTable: string[] = [
+  "Баркод",
+  "Предмет",
+  "Артикул поставщика",
+  "Размер",
+  "Доступно к заказу",
+  "Товар в пути",
+  "Итого кол-во товаров",
+];
 
 export default function Form(): ReactNode {
+  const { data: products } = useGetAllProductsQuery();
+
   return (
     <form className="flex flex-col items-start gap-3">
       <div className="flex items-center gap-3">
@@ -52,14 +68,16 @@ export default function Form(): ReactNode {
         >
           Сформировать
         </Button>
-        <Button
-          type="primary"
-          size="small"
-          className="bg-darkenblue text-sm rounded-3xl px-3 py-5"
-          icon={<ExportOutlined />}
-        >
-          Экспорт
-        </Button>
+        <CSVLink data={[]} filename="Table.csv">
+          <Button
+            type="primary"
+            size="small"
+            className="bg-darkenblue text-sm rounded-3xl px-3 py-5"
+            icon={<ExportOutlined />}
+          >
+            Экспорт
+          </Button>
+        </CSVLink>
       </div>
     </form>
   );

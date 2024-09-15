@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { WechatOutlined } from "@ant-design/icons";
+import { MessageFilled } from "@ant-design/icons";
 
 // components
 import FinanceControl from "../../components/FinanceControl";
@@ -15,7 +15,7 @@ export default function Sidebar(): ReactNode {
       <Button
         type="primary"
         size="large"
-        icon={<WechatOutlined />}
+        icon={<MessageFilled />}
         className="py-7 text-lg rounded-3xl"
       >
         Связаться с нами
