@@ -3,23 +3,41 @@
 @tailwind utilities;
 
 @layer utilities {
-  .scrollbar::-webkit-scrollbar {
-    max-width: 20px;
-    height: 15px;
+  table {
+    tbody {
+      tr {
+        &:nth-child(odd) {
+          background-color: #eff1f2;
+          border-radius: 40px;
+        }
+
+        &:nth-child(even) {
+          background-color: #f9fafa;
+          border-radius: 40px;
+        }
+      }
+    }
   }
 
-  .scrollbar::-webkit-scrollbar-track {
-    border-radius: 100vh;
-    background: #e5e9eb;
-  }
+  .scrollbar {
+    &::-webkit-scrollbar {
+      width: 20px;
+      height: 15px;
+    }
 
-  .scrollbar::-webkit-scrollbar-thumb {
-    background: #0080ff;
-    border-radius: 100vh;
-    border: 3px solid #f6f7ed;
-  }
+    &::-webkit-scrollbar-track {
+      border-radius: 100vh;
+      background-color: #e5e9eb;
+    }
 
-  .scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #579add;
+    &::-webkit-scrollbar-thumb {
+      background: #0080ff;
+      border-radius: 100vh;
+      border: 3px solid #f6f7ed;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #579add;
+    }
   }
 }

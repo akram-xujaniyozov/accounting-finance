@@ -1,4 +1,6 @@
-export type AllProducts = {
+import React, { Dispatch, SetStateAction } from "react";
+
+export type Product = {
   id: string;
   barcode: string;
   predmet: string;
@@ -10,5 +12,7 @@ export type AllProducts = {
 };
 
 export type TableSkeletonProps = {
-  allProducts: AllProducts[] | undefined;
+  allProducts: Product[] | undefined;
+  singleProduct: Product[] | undefined;
+  onEditProduct: Dispatch<SetStateAction<Product[]>>;
 };

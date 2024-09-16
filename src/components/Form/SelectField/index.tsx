@@ -6,33 +6,35 @@ import Select from "../../../ui/Select";
 import { SelectProps } from "../../../ui/Select/types";
 
 interface SelectFieldProps extends SelectProps {
-  label: string;
+  labelName: string;
   width: string;
 }
 
 export default function SelectField({
-  label,
+  labelName,
+  width,
   placeholder,
   options,
-  width,
   styles,
   className,
   defaultValue,
   variant,
+  onChange,
 }: SelectFieldProps): ReactNode {
   return (
     <FormElementsContainer
       width={width}
       className="flex flex-col items-center p-1 rounded-[18px] bg-white"
     >
-      <label className="text-zinc-500 text-xs mr-2 ">{label}</label>
+      <label className="text-zinc-500 text-xs mr-2 ">{labelName}</label>
       <Select
         variant={variant}
         options={options}
         placeholder={placeholder}
-        style={styles}
+        styles={styles}
         className={className}
         defaultValue={defaultValue}
+        onChange={onChange}
       />
     </FormElementsContainer>
   );

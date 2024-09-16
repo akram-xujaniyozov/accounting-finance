@@ -11,11 +11,13 @@ interface InputFieldProps extends InputProps {
 }
 
 export default function InputField({
+  value,
   variant,
   label,
   placeholder,
   width,
   maxLength,
+  onChange,
 }: InputFieldProps): ReactNode {
   return (
     <FormElementsContainer
@@ -24,10 +26,12 @@ export default function InputField({
     >
       <label className="text-slate-950 text-xs mr-2">{label}</label>
       <Input
+        value={value}
         variant={variant}
         placeholder={placeholder}
         className="text-xs p-3 rounded-2xl text-center"
         maxLength={maxLength}
+        onChange={onChange}
       />
     </FormElementsContainer>
   );

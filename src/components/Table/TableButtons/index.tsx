@@ -11,7 +11,7 @@ import Button from "../../../ui/Button";
 import { TableButtonsProps } from "./types";
 
 export default function TableButtons({
-  onClick,
+  onDownloadClick,
 }: TableButtonsProps): ReactNode {
   return (
     <div className="flex items-center justify-between w-5/6 border-y border-zinc-300 py-2">
@@ -23,7 +23,7 @@ export default function TableButtons({
           className="text-base text-darkerblue font-extralight"
           icon={<FolderFilled />}
           iconPosition="start"
-          onClick={onClick}
+          onClick={onDownloadClick}
         >
           Загрузить данные из csv
         </Button>

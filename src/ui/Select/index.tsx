@@ -1,15 +1,15 @@
 import React, { ReactNode } from "react";
 import { Select } from "antd";
-
-import { SelectProps } from "antd";
+import { SelectProps } from "./types";
 
 export default function SelectElement({
   options,
   placeholder,
   className,
-  style,
+  styles,
   defaultValue,
   variant,
+  onChange,
 }: SelectProps): ReactNode {
   return (
     <Select
@@ -17,8 +17,9 @@ export default function SelectElement({
       options={options}
       placeholder={placeholder}
       className={className}
-      style={style}
+      style={styles}
       defaultValue={defaultValue}
+      onChange={onChange}
     />
   );
 }
