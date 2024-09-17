@@ -112,8 +112,8 @@ export default function TableSkeleton({
             );
           })}
         </tbody>
-        <TableTotal data={data} />
       </table>
+      {data.length > 0 && <TableTotal data={data} />}
     </div>
   );
 }
