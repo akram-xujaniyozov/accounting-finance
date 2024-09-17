@@ -13,7 +13,12 @@ export const productsApi = createApi({
     }),
     getProduct: builder.query<
       Product[],
-      { barcode: string; article: string; size: number | ""; predmet: string }
+      {
+        barcode: string;
+        article: string;
+        size: number | "" | null;
+        predmet: string;
+      }
     >({
       query: ({ barcode, article, size, predmet }) =>
         `products/?barcode=${barcode}&article=${article}&size=${size}&predmet=${predmet}`,
