@@ -6,8 +6,10 @@ module.exports = {
   mode: "development",
   entry: "./src/index.tsx",
   output: {
-    filename: "bundle.[hash].js",
+    filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
+    publicPath: "/",
+    clean: true,
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".jsx"],
@@ -56,8 +58,16 @@ module.exports = {
     ],
   },
   devServer: {
+    static: [
+      {
+        directory: path.join(__dirname, "dist"),
+        watch: true,
+      },
+    ],
     port: 3000,
     open: true,
     hot: true,
+    compress: true,
+    historyApiFallback: true,
   },
 };

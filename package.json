@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack --mode production",
-    "server": "json-server --watch public/data/db.json --port=3004"
+    "server:start": "json-server --watch public/data/db.json --port 3004"
   },
   "keywords": [],
   "author": "",

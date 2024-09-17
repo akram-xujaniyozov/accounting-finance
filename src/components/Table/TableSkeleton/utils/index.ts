@@ -1,7 +1,7 @@
 import { Column } from "react-table";
-import { AllProducts } from "../types";
+import { Product } from "../types";
 
-export const columns: Column<AllProducts>[] = [
+export const columns: Column<Product>[] = [
   { Header: "Баркод", accessor: "barcode" },
   { Header: "Предмет", accessor: "predmet" },
   { Header: "Артикул поставщика", accessor: "article" },
@@ -9,4 +9,12 @@ export const columns: Column<AllProducts>[] = [
   { Header: "Доступно к заказу", accessor: "availableToOrder" },
   { Header: "Товар в пути", accessor: "productOnRoad" },
   { Header: "Итого кол-во товаров", accessor: "totalAmout" },
+];
+
+export const headerTitles: string[] = [
+  "barcode",
+  "size",
+  "availableToOrder",
+  "productOnRoad",
+  "totalAmout",
 ];

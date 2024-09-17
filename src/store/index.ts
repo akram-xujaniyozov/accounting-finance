@@ -2,9 +2,9 @@ import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { useDispatch } from "react-redux";
 
-import { productsApi } from "../modules/Main/store/service/productsApi";
-import { filterProductSlice } from "../modules/Main/store/filterProduct/slice";
-import { activeRequestSlice } from "../modules/Main/store/activeRequest/slice";
+import { productsApi } from "../modules/Main/model/service/productsApi";
+import { filterProductSlice } from "../modules/Main/model/filterProduct/slice";
+import { activeRequestSlice } from "../modules/Main/model/activeRequest/slice";
 
 export const store = configureStore({
   reducer: {

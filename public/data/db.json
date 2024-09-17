@@ -3,19 +3,19 @@
     {
       "barcode": "2037618545904",
       "predmet": "Одежда",
-      "article": "Кардиган",
-      "size": "60",
-      "availableToOrder": "0",
-      "productOnRoad": "40",
-      "totalAmout": "30",
+      "article": "Брюки",
+      "size": "23",
+      "availableToOrder": "10",
+      "productOnRoad": "18",
+      "totalAmout": "12",
       "id": "1"
     },
     {
       "barcode": "2037618545904",
-      "predmet": "Джинсы",
+      "predmet": "Одежда",
       "article": "Брюки",
-      "size": "50",
-      "availableToOrder": "6",
+      "size": "14",
+      "availableToOrder": "2",
       "productOnRoad": "32",
       "totalAmout": "4",
       "id": "2"
@@ -24,31 +24,31 @@
       "barcode": "2037618545904",
       "predmet": "Одежда",
       "article": "Брюки",
-      "size": "54",
-      "availableToOrder": "25",
+      "size": "58",
+      "availableToOrder": "12",
       "productOnRoad": "50",
       "totalAmout": "2",
       "id": "3"
     },
     {
-      "id": "4",
       "barcode": "2037618545904",
-      "predmet": "Джинсы",
+      "predmet": "Одежда",
       "article": "Брюки",
-      "size": "58",
+      "size": "52",
       "availableToOrder": "18",
       "productOnRoad": "0",
-      "totalAmout": "15"
+      "totalAmout": "32",
+      "id": "4"
     },
     {
       "id": "5",
       "barcode": "2037618545904",
       "predmet": "Одежда",
       "article": "Брюки 1",
-      "size": "52",
-      "availableToOrder": "3",
+      "size": "58",
+      "availableToOrder": "5",
       "productOnRoad": "3",
-      "totalAmout": "3"
+      "totalAmout": "4"
     }
   ]
 }

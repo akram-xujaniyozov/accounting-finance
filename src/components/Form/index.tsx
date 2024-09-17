@@ -5,11 +5,11 @@ import { useSelector } from "react-redux";
 import {
   useGetProductsQuery,
   useGetProductQuery,
-} from "../../modules/Main/store/service/productsApi";
+} from "../../modules/Main/model/service/productsApi";
 import { useAppDispatch } from "../../store";
-import { selectfilter } from "../../modules/Main/store/filterProduct/selectors";
-import { filteringProduct } from "../../modules/Main/store/filterProduct/slice";
-import { selectActiveRequest } from "../../modules/Main/store/activeRequest/selectors";
+import { selectfilter } from "../../modules/Main/model/filterProduct/selectors";
+import { filteringProduct } from "../../modules/Main/model/filterProduct/slice";
+import { selectActiveRequest } from "../../modules/Main/model/activeRequest/selectors";
 
 // components
 import InputField from "./InputField";

@@ -2,17 +2,16 @@ import React, { Dispatch, SetStateAction } from "react";
 
 export type Product = {
   id: string;
-  barcode: string;
+  barcode: number;
   predmet: string;
   article: string;
-  size: string;
-  availableToOrder: string;
-  productOnRoad: string;
-  totalAmout: string;
+  size: number;
+  availableToOrder: number;
+  productOnRoad: number;
+  totalAmout: number;
 };
 
 export type TableSkeletonProps = {
   allProducts: Product[] | undefined;
   singleProduct: Product[] | undefined;
-  onEditProduct: Dispatch<SetStateAction<Product[]>>;
 };

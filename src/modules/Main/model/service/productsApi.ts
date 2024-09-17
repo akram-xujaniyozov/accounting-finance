@@ -19,14 +19,11 @@ export const productsApi = createApi({
         `products/?barcode=${barcode}&article=${article}&size=${size}&predmet=${predmet}`,
     }),
     updateProduct: builder.mutation<Product[], Partial<Product>>({
-      query(data) {
-        const { id, ...body } = data;
-        return {
-          url: `products/${id}`,
-          method: "PUT",
-          body,
-        };
-      },
+      query: (data) => ({
+        url: `products/${data.id}`,
+        method: "PATCH",
+        body: data,
+      }),
       invalidatesTags: ["Products"],
     }),
   }),
