@@ -11,6 +11,7 @@ export default function TableTotal({ data }: { data: Product[] }): ReactNode {
   const availableToOrder = calculateOverallAmount(data, "availableToOrder");
   const productOnRoad = calculateOverallAmount(data, "productOnRoad");
   const totalAmout = calculateOverallAmount(data, "totalAmout");
+
   return (
     <div className="flex gap-1 bg-white p-1 w-[1050px]">
       <div className="grow bg-lightengray py-6 px-2 rounded-tl-lg rounded-bl-lg">

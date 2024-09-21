@@ -5,7 +5,7 @@
       "predmet": "Одежда",
       "article": "Брюки",
       "size": "45",
-      "availableToOrder": "34",
+      "availableToOrder": "12",
       "productOnRoad": "18",
       "totalAmout": "12",
       "id": "1"
@@ -15,8 +15,8 @@
       "predmet": "Одежда",
       "article": "Брюки",
       "size": "46",
-      "availableToOrder": "2",
-      "productOnRoad": "32",
+      "availableToOrder": "3",
+      "productOnRoad": "12",
       "totalAmout": "4",
       "id": "2"
     },
@@ -26,7 +26,7 @@
       "article": "Брюки",
       "size": "58",
       "availableToOrder": "12",
-      "productOnRoad": "50",
+      "productOnRoad": "0",
       "totalAmout": "2",
       "id": "3"
     },
