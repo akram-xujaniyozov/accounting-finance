@@ -20,10 +20,10 @@ export default function TableTotal({ data }: { data: Product[] }): ReactNode {
       <div className="basis-36 bg-lightengray py-6 px-2 text-center">
         <span>{availableToOrder}</span>
       </div>
-      <div className="basis-[100px] bg-lightengray py-6 px-2 text-center">
+      <div className="basis-[104px] bg-lightengray py-6 px-2 text-center">
         <span>{productOnRoad}</span>
       </div>
-      <div className="basis-[169px] grow-1 bg-lightengray py-6 px-2 rounded-tr-lg rounded-br-lg text-center">
+      <div className="basis-[168px] grow-1 bg-lightengray py-6 px-2 rounded-tr-lg rounded-br-lg text-center">
         <span>{totalAmout}</span>
       </div>
     </div>

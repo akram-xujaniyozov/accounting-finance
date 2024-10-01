@@ -4,7 +4,7 @@ import { CSVLink } from "react-csv";
 import { useSelector } from "react-redux";
 import {
   useGetProductsQuery,
-  useGetProductQuery,
+  useGetFilteredProductsQuery,
 } from "../../modules/Main/model/service/productsApi";
 import { useAppDispatch } from "../../store";
 import { selectfilter } from "../../modules/Main/model/filterProduct/selectors";
@@ -23,11 +23,11 @@ export default function Form(): ReactNode {
   const activeRequest = useSelector(selectActiveRequest);
   const [enteredBarcode, setEnteredBarcode] = useState<string>("");
   const [enteredArticle, setEnteredArticle] = useState<string>("");
-  const [enteredSize, setEnteredSize] = useState<number | "">("");
+  const [enteredSize, setEnteredSize] = useState<number | null>(null);
   const [enteredPredmet, setEnteredPredmet] = useState<string>("");
 
   const { data: products } = useGetProductsQuery(name, { skip: activeRequest });
-  const { data: product } = useGetProductQuery(filterProductData, {
+  const { data: product } = useGetFilteredProductsQuery(filterProductData, {
     skip: activeRequest,
   });
 
@@ -66,7 +66,7 @@ export default function Form(): ReactNode {
     setEnteredBarcode("");
     setEnteredArticle("");
     setEnteredPredmet("");
-    setEnteredSize("");
+    setEnteredSize(null);
   }
 
   return (

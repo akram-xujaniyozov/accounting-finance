@@ -1,4 +1,4 @@
-export interface Product {
+export type Product = {
   id: string;
   barcode: number;
   predmet: string;
@@ -7,4 +7,11 @@ export interface Product {
   availableToOrder: number;
   productOnRoad: number;
   totalAmout: number;
+};
+
+export type SortOrder = "asc" | "desc" | null;
+
+export interface SortConfig {
+  key?: string;
+  direction: SortOrder;
 }

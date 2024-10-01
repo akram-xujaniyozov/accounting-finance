@@ -1,6 +1,6 @@
 export interface FilterProduct {
   barcode: string;
   article: string;
-  size: null;
+  size: null | number;
   predmet: string;
 }

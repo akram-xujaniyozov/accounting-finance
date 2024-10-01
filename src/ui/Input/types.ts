@@ -1,7 +1,7 @@
 import { CSSProperties, ChangeEvent } from "react";
 
 export interface InputProps {
-  value: string | number;
+  value: null | number | string;
   variant: "filled" | "outlined" | "borderless" | undefined;
   placeholder: string | undefined;
   styles?: CSSProperties;

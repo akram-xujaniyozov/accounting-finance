@@ -11,17 +11,27 @@ export const productsApi = createApi({
       query: () => `products`,
       providesTags: ["Products"],
     }),
-    getProduct: builder.query<
+    getFilteredProducts: builder.query<
       Product[],
       {
         barcode: string;
         article: string;
-        size: number | "" | null;
+        size: number | null;
         predmet: string;
       }
     >({
       query: ({ barcode, article, size, predmet }) =>
-        `products/?barcode=${barcode}&article=${article}&size=${size}&predmet=${predmet}`,
+        `products?barcode=${barcode}&article=${article}&size=${size}&predmet=${predmet}`,
+    }),
+    getSortingItems: builder.query<
+      Product[],
+      {
+        sortBy: string | undefined;
+        sortOrder: "asc" | "desc" | null | undefined;
+      }
+    >({
+      query: ({ sortBy, sortOrder }) =>
+        `products?_sort=${sortBy}&_order=${sortOrder}`,
     }),
     updateProduct: builder.mutation<Product[], Partial<Product>>({
       query: (data) => ({
@@ -36,6 +46,7 @@ export const productsApi = createApi({
 
 export const {
   useGetProductsQuery,
-  useGetProductQuery,
+  useGetFilteredProductsQuery,
+  useGetSortingItemsQuery,
   useUpdateProductMutation,
 } = productsApi;

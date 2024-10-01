@@ -1,5 +1,8 @@
-import React, { ChangeEvent, ReactNode, useState, useEffect } from "react";
+import React, { ChangeEvent, ReactNode, useState } from "react";
+import { useSelector } from "react-redux";
 import { useTable, Row, Cell } from "react-table";
+import { CaretDownOutlined } from "@ant-design/icons";
+
 // Edit product
 import { useUpdateProductMutation } from "../../../modules/Main/model/service/productsApi";
 // Types of component
@@ -8,8 +11,9 @@ import { columns, headerTitles } from "./utils/index";
 import TableTotal from "../TableTotal";
 
 export default function TableSkeleton({
-  allProducts,
-  singleProduct,
+  datas,
+  onSortedItems,
+  sortConfig,
 }: TableSkeletonProps): ReactNode {
   const [updateProduct] = useUpdateProductMutation();
 
@@ -18,9 +22,7 @@ export default function TableSkeleton({
   const [cellValue, setCellValue] = useState<string>("");
   const [cellOldValue, setCellOldValue] = useState<string>("");
 
-  const products = allProducts ? allProducts : [];
-  const product = singleProduct ? singleProduct : [];
-  const data = product.length > 0 ? product : products;
+  const data = datas && datas?.length > 0 ? datas : [];
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable<Product>({
@@ -28,10 +30,23 @@ export default function TableSkeleton({
       columns,
     });
 
+  // Editing cell of table
   function handleEditClick(cell: Cell<Product>, row: Row<Product>) {
     setEditRowId(row.id);
     setEditCellId(cell.column.id);
     setCellOldValue(cell.value);
+  }
+
+  function handleChange(e: ChangeEvent<HTMLInputElement>) {
+    const valueEntered = e.target.value;
+    const checkNumber = !isNaN(+valueEntered)!;
+
+    if (headerTitles.includes(editCellId) && !checkNumber) {
+      setCellValue(cellOldValue);
+      return;
+    }
+
+    setCellValue(valueEntered);
   }
 
   async function handleBlur() {
@@ -52,18 +67,6 @@ export default function TableSkeleton({
     setEditRowId("");
   }
 
-  function handleChange(e: ChangeEvent<HTMLInputElement>) {
-    const valueEntered = e.target.value;
-    const checkNumber = !isNaN(+valueEntered)!;
-
-    if (headerTitles.includes(editCellId) && !checkNumber) {
-      setCellValue(cellOldValue);
-      return;
-    }
-
-    setCellValue(valueEntered);
-  }
-
   return (
     <div className="bg-white mt-3 p-3 rounded-2xl  max-w-[1000px] overflow-x-auto  scrollbar">
       <table {...getTableProps()} className="w-[1050px]">
@@ -76,6 +79,20 @@ export default function TableSkeleton({
                   className="py-4 text-darkerblue text-sm font-light text-center"
                 >
                   {column.render("Header")}
+                  <span
+                    className="pl-1 hover:cursor-pointer"
+                    onClick={() => onSortedItems(column.id)}
+                  >
+                    <CaretDownOutlined
+                      style={{ color: "#0080ff" }}
+                      rotate={
+                        sortConfig?.key === column.id &&
+                        sortConfig.direction === "asc"
+                          ? 180
+                          : 0
+                      }
+                    />
+                  </span>
                 </th>
               ))}
             </tr>
@@ -91,7 +108,7 @@ export default function TableSkeleton({
                     <td
                       onDoubleClick={() => handleEditClick(cell, row)}
                       key={`${index}_${cell.value}`}
-                      className="px-8 py-4 text-darkerblue text-sm font-medium border-4 border-white text-center"
+                      className="px-10 py-4 text-darkerblue text-sm font-medium border-4 border-white text-center"
                     >
                       {row.id === editRowId && cell.column.id === editCellId ? (
                         <div>

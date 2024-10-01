@@ -1,17 +1,9 @@
-import React, { Dispatch, SetStateAction } from "react";
+import { SortConfig, Product } from "../types";
 
-export type Product = {
-  id: string;
-  barcode: number;
-  predmet: string;
-  article: string;
-  size: number;
-  availableToOrder: number;
-  productOnRoad: number;
-  totalAmout: number;
+type TableSkeletonProps = {
+  datas: Product[] | undefined;
+  onSortedItems: (key: string) => void;
+  sortConfig: SortConfig | null;
 };
 
-export type TableSkeletonProps = {
-  allProducts: Product[] | undefined;
-  singleProduct: Product[] | undefined;
-};
+export { TableSkeletonProps, Product };

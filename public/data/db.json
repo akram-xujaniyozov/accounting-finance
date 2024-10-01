@@ -5,7 +5,7 @@
       "predmet": "Одежда",
       "article": "Брюки",
       "size": "45",
-      "availableToOrder": "12",
+      "availableToOrder": "18",
       "productOnRoad": "18",
       "totalAmout": "12",
       "id": "1"
@@ -34,7 +34,7 @@
       "barcode": "2037618545904",
       "predmet": "Одежда",
       "article": "Брюки",
-      "size": "63",
+      "size": "43",
       "availableToOrder": "18",
       "productOnRoad": "0",
       "totalAmout": "32",
