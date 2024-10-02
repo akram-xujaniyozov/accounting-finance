@@ -32,6 +32,7 @@ export const productsApi = createApi({
     >({
       query: ({ sortBy, sortOrder }) =>
         `products?_sort=${sortBy}&_order=${sortOrder}`,
+      providesTags: ["Products"],
     }),
     updateProduct: builder.mutation<Product[], Partial<Product>>({
       query: (data) => ({
